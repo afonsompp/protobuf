@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.zup.grpc";
+option java_outer_classname = "Protobuf";
+option objc_class_prefix = "HLW";
+
+package com.zup.grpc;
+
+service ProtobufService {
+  rpc send (ProtobufRequest) returns (ProtobufReply) {}
+}
+
+message ProtobufRequest {
+  string name = 1;
+}
+
+message ProtobufReply {
+  string message = 1;
+}
