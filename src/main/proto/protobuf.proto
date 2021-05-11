@@ -7,14 +7,39 @@ option objc_class_prefix = "HLW";
 
 package com.zup.grpc;
 
+import "google/protobuf/timestamp.proto";
+
 service ProtobufService {
-  rpc send (ProtobufRequest) returns (ProtobufReply) {}
+  rpc send (EmployeeRequest) returns (EmployeeResponse) {}
 }
 
-message ProtobufRequest {
+
+message Address {
+  string street = 1;
+  string number = 2;
+  string code = 3;
+
+}
+
+enum Role {
+  MANAGER = 0;
+  DEV = 1;
+  QA = 2  ;
+}
+
+message EmployeeRequest {
   string name = 1;
+  string cpf = 2;
+  string email = 3;
+  int32 age = 4;
+  double salary = 5;
+  repeated Address address = 6;
+  Role role = 7;
+
 }
 
-message ProtobufReply {
-  string message = 1;
+
+message EmployeeResponse {
+  string name = 1;
+  google.protobuf.Timestamp createAt = 2;
 }
