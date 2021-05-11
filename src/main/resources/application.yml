@@ -1,3 +1,12 @@
 micronaut:
   application:
     name: protobuf
+grpc:
+  client:
+    plaintext: true
+    max-retry-attempts: 10
+  channels:
+    shipping:
+      address: '0.0.0.0:8084'
+      plaintext: true
+      max-retry-attempts: 5
