@@ -34,7 +34,7 @@ micronaut {
 dependencies {
 	implementation("io.micronaut:micronaut-management")
 	implementation("io.micronaut:micronaut-runtime")
-	implementation("io.micronaut.grpc:micronaut-grpc-client-runtime")
+	implementation("io.micronaut.grpc:micronaut-grpc-runtime")
 	implementation("io.micronaut.kotlin:micronaut-kotlin-runtime")
 	implementation("javax.annotation:javax.annotation-api")
 	implementation("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
@@ -43,6 +43,10 @@ dependencies {
 	implementation("io.micronaut:micronaut-validation")
 	runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin")
 	testImplementation("io.micronaut:micronaut-http-client")
+
+	implementation("io.micronaut.data:micronaut-data-hibernate-jpa")
+	implementation("mysql:mysql-connector-java")
+	implementation("io.micronaut.sql:micronaut-jdbc-hikari")
 }
 
 
