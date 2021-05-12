@@ -47,6 +47,9 @@ dependencies {
 	implementation("io.micronaut.data:micronaut-data-hibernate-jpa")
 	implementation("mysql:mysql-connector-java")
 	implementation("io.micronaut.sql:micronaut-jdbc-hikari")
+
+	testImplementation("com.h2database:h2:1.3.148")
+
 }
 
 

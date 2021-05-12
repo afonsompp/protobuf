@@ -13,7 +13,7 @@ class CarService(@Inject val repository: CarRepository) : CarServiceGrpc.CarServ
 		if (repository.existsByPlate(request.plate)) {
 			responseObserver?.onError(
 				Status.ALREADY_EXISTS
-						.withDescription("Plate already existis")
+						.withDescription("Plate already exists")
 						.asRuntimeException()
 			)
 			return
